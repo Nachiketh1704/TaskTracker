@@ -3,7 +3,7 @@
 A **responsive, modern React.js** task management app built as a pre-hire intern assignment.  
 It demonstrates React fundamentals, hooks, clean component architecture, and local storage persistence.
 
-![Task Tracker Preview](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Task+Tracker+App)
+![An image showing the login page](images/Login.png)
 
 ---
 
@@ -77,13 +77,13 @@ task-tracker/
 
 > Replace these placeholders with actual screenshots after deployment
 
-| Login Page                                                     | Dashboard View                                                        |
-| -------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Login](![An image showing the login page](images/Login.png)) | ![Dashboard](![An image showing the dashboard](images/Dashboard.png)) |
+| Login Page                                           | Dashboard View                                          |
+| ---------------------------------------------------- | ------------------------------------------------------- |
+| ![An image showing the login page](images/Login.png) | ![An image showing the dashboard](images/Dashboard.png) |
 
-| Task Management                                                          | Mobile View                                                       |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| ![Tasks](![An image showing adding of tasks](images/TaskManagement.png)) | ![Mobile](![An image showing Mobile view](images/MobileView.png)) |
+| Task Management                                                | Mobile View                                            |
+| -------------------------------------------------------------- | ------------------------------------------------------ |
+| ![An image showing adding of tasks](images/TaskManagement.png) | ![An image showing Mobile view](images/MobileView.png) |
 
 ---
 
@@ -100,13 +100,12 @@ task-tracker/
 
 ## 🌐 Deployment
 
-- Live demo: [https://your-task-tracker.netlify.app](https://unique-tiramisu-4023e6.netlify.app/)
+- Live demo: [https://unique-tiramisu-4023e6.netlify.app/](https://unique-tiramisu-4023e6.netlify.app/)
 
 To deploy:
 
 ```bash
 npm run build
-# Upload /build folder to Netlify or Vercel
 ```
 
 ---
