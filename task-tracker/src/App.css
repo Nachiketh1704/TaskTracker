@@ -50,13 +50,13 @@ code {
 
 /* Animation Classes */
 .fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -70,13 +70,56 @@ code {
 
 @keyframes slideIn {
   from {
-    transform: translateX(-100%);
     opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* New animation for success feedback */
+@keyframes pulse-success {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-success {
+  animation: pulse-success 0.6s ease-in-out;
+}
+
+/* Enhanced hover effects */
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button press animation */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, textarea {
+  transition: all 0.2s ease-in-out;
 }
 
 /* Focus Styles */

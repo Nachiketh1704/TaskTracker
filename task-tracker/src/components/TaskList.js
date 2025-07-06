@@ -27,7 +27,7 @@ const TaskList = ({ tasks, onToggleComplete, onDeleteTask, onEditTask }) => {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 fade-in">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
