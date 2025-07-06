@@ -9,7 +9,6 @@ import {
   getUser,
   clearUser,
   saveTasks,
-  getTasks,
   initializeSampleData,
 } from "./utils/localStorage";
 
