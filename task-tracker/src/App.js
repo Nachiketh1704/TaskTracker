@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import TaskForm from "./components/TaskForm";
@@ -12,6 +12,10 @@ import {
   getTasks,
   initializeSampleData,
 } from "./utils/localStorage";
+
+// Performance optimization: Memoize components
+const MemoizedTaskList = React.memo(TaskList);
+const MemoizedTaskFilter = React.memo(TaskFilter);
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,7 +54,7 @@ function App() {
     setTasks([]);
   };
 
-  const handleAddTask = (taskData) => {
+  const handleAddTask = useCallback((taskData) => {
     const newTask = {
       id: Date.now(),
       title: taskData.title,
@@ -59,25 +63,25 @@ function App() {
       createdAt: new Date().toISOString(),
     };
     setTasks((prev) => [newTask, ...prev]);
-  };
+  }, []);
 
-  const handleToggleComplete = (taskId) => {
+  const handleToggleComplete = useCallback((taskId) => {
     setTasks((prev) =>
       prev.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
-  };
+  }, []);
 
-  const handleDeleteTask = (taskId) => {
+  const handleDeleteTask = useCallback((taskId) => {
     setTasks((prev) => prev.filter((task) => task.id !== taskId));
-  };
+  }, []);
 
-  const handleEditTask = (taskId, updates) => {
+  const handleEditTask = useCallback((taskId, updates) => {
     setTasks((prev) =>
       prev.map((task) => (task.id === taskId ? { ...task, ...updates } : task))
     );
-  };
+  }, []);
 
   const getFilteredTasks = () => {
     switch (filter) {
@@ -138,14 +142,14 @@ function App() {
           <TaskForm onAddTask={handleAddTask} />
 
           {/* Task Filter */}
-          <TaskFilter
+          <MemoizedTaskFilter
             currentFilter={filter}
             onFilterChange={setFilter}
             taskCounts={getTaskCounts()}
           />
 
           {/* Task List */}
-          <TaskList
+          <MemoizedTaskList
             tasks={getFilteredTasks()}
             onToggleComplete={handleToggleComplete}
             onDeleteTask={handleDeleteTask}

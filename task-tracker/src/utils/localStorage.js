@@ -3,29 +3,80 @@ const STORAGE_KEYS = {
   TASKS: "taskTracker_tasks",
 };
 
+const isLocalStorageAvailable = () => {
+  try {
+    const testKey = "__localStorage_test__";
+    localStorage.setItem(testKey, "test");
+    localStorage.removeItem(testKey);
+    return true;
+  } catch (e) {
+    console.warn("localStorage is not available:", e);
+    return false;
+  }
+};
+
 export const saveUser = (username) => {
-  localStorage.setItem(STORAGE_KEYS.USERNAME, username);
+  if (isLocalStorageAvailable()) {
+    try {
+      localStorage.setItem(STORAGE_KEYS.USERNAME, username);
+    } catch (error) {
+      console.error("Failed to save user to localStorage:", error);
+    }
+  }
 };
 
 export const getUser = () => {
-  return localStorage.getItem(STORAGE_KEYS.USERNAME);
+  if (isLocalStorageAvailable()) {
+    try {
+      return localStorage.getItem(STORAGE_KEYS.USERNAME);
+    } catch (error) {
+      console.error("Failed to get user from localStorage:", error);
+      return null;
+    }
+  }
+  return null;
 };
 
 export const clearUser = () => {
-  localStorage.removeItem(STORAGE_KEYS.USERNAME);
+  if (isLocalStorageAvailable()) {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.USERNAME);
+    } catch (error) {
+      console.error("Failed to clear user from localStorage:", error);
+    }
+  }
 };
 
 export const saveTasks = (tasks) => {
-  localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(tasks));
+  if (isLocalStorageAvailable()) {
+    try {
+      localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(tasks));
+    } catch (error) {
+      console.error("Failed to save tasks to localStorage:", error);
+    }
+  }
 };
 
 export const getTasks = () => {
-  try {
-    const tasks = localStorage.getItem(STORAGE_KEYS.TASKS);
-    return tasks ? JSON.parse(tasks) : [];
-  } catch (error) {
-    console.error("Error parsing tasks from localStorage:", error);
-    return [];
+  if (isLocalStorageAvailable()) {
+    try {
+      const tasks = localStorage.getItem(STORAGE_KEYS.TASKS);
+      return tasks ? JSON.parse(tasks) : [];
+    } catch (error) {
+      console.error("Error parsing tasks from localStorage:", error);
+      return [];
+    }
+  }
+  return [];
+};
+
+export const clearTasks = () => {
+  if (isLocalStorageAvailable()) {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.TASKS);
+    } catch (error) {
+      console.error("Failed to clear tasks from localStorage:", error);
+    }
   }
 };
 
