@@ -73,7 +73,7 @@ const TaskItem = ({ task, onToggleComplete, onDeleteTask, onEditTask }) => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => onToggleComplete(task.id)}
-                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
+                className={`w-8 h-8 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 touch-manipulation ${
                   task.completed
                     ? "bg-green-500 border-green-500 text-white"
                     : "border-gray-300 hover:border-purple-500"
@@ -122,7 +122,7 @@ const TaskItem = ({ task, onToggleComplete, onDeleteTask, onEditTask }) => {
             <div className="flex gap-2">
               <button
                 onClick={() => setIsEditing(true)}
-                className="p-2 text-gray-500 hover:text-purple-500 transition-colors"
+                className="p-3 sm:p-2 text-gray-500 hover:text-purple-500 transition-colors touch-manipulation"
                 title="Edit task"
               >
                 <svg
@@ -141,7 +141,7 @@ const TaskItem = ({ task, onToggleComplete, onDeleteTask, onEditTask }) => {
               </button>
               <button
                 onClick={() => setShowDeleteConfirm(true)}
-                className="p-2 text-gray-500 hover:text-red-500 transition-colors"
+                className="p-3 sm:p-2 text-gray-500 hover:text-red-500 transition-colors touch-manipulation"
                 title="Delete task"
               >
                 <svg

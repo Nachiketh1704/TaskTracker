@@ -36,7 +36,7 @@ const Login = ({ onLogin }) => {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200"
+              className="w-full px-4 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-200 text-base"
               placeholder="Enter your username"
               autoFocus
             />
@@ -45,7 +45,7 @@ const Login = ({ onLogin }) => {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-indigo-600text-white py-3 px-6 rounded-xl font-semibold hover:from-purplr-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-3 px-6 sm:py-4 sm:px-8 rounded-xl font-semibold hover:from-purple-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg text-base touch-manipulation"
           >
             Get Started
           </button>

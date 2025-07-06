@@ -150,3 +150,46 @@ textarea:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  /* Larger touch targets on mobile */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text sizing */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3 {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Improved spacing */
+  .space-y-4 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Modal improvements */
+  .fixed.inset-0 {
+    padding: 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .transform.hover\\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\\:from-purple-600:hover {
+    background: linear-gradient(to right, #7c3aed, #4f46e5);
+  }
+}
