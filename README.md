@@ -75,8 +75,6 @@ task-tracker/
 
 ## 📸 Screenshots
 
-> Replace these placeholders with actual screenshots after deployment
-
 | Login Page                                           | Dashboard View                                          |
 | ---------------------------------------------------- | ------------------------------------------------------- |
 | ![An image showing the login page](images/Login.png) | ![An image showing the dashboard](images/Dashboard.png) |
