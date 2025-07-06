@@ -77,13 +77,13 @@ task-tracker/
 
 > Replace these placeholders with actual screenshots after deployment
 
-| Login Page | Dashboard View |
-|-----------|---------------|
-| ![Login](https://via.placeholder.com/300x200/8b5cf6/ffffff?text=Login+Page) | ![Dashboard](https://via.placeholder.com/300x200/22c55e/ffffff?text=Dashboard) |
+| Login Page                                                     | Dashboard View                                                        |
+| -------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Login](![An image showing the login page](images/Login.png)) | ![Dashboard](![An image showing the dashboard](images/Dashboard.png)) |
 
-| Task Management | Mobile View |
-|----------------|-------------|
-| ![Tasks](https://via.placeholder.com/300x200/3b82f6/ffffff?text=Tasks) | ![Mobile](https://via.placeholder.com/300x200/facc15/000000?text=Mobile+View) |
+| Task Management                                                          | Mobile View                                                       |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| ![Tasks](![An image showing adding of tasks](images/TaskManagement.png)) | ![Mobile](![An image showing Mobile view](images/MobileView.png)) |
 
 ---
 
@@ -98,24 +98,12 @@ task-tracker/
 
 ---
 
-## ✅ Manual Testing Checklist
-
-- [x] Login & persistence
-- [x] Add/edit/delete tasks
-- [x] Toggle complete/pending
-- [x] Filter (All / Completed / Pending)
-- [x] Data saved to localStorage
-- [x] Works on mobile & desktop
-
----
-
 ## 🌐 Deployment
 
-> Replace with your live URL
-
-- Live demo: [https://your-task-tracker.netlify.app](https://your-task-tracker.netlify.app)
+- Live demo: [https://your-task-tracker.netlify.app](https://unique-tiramisu-4023e6.netlify.app/)
 
 To deploy:
+
 ```bash
 npm run build
 # Upload /build folder to Netlify or Vercel
@@ -137,6 +125,7 @@ npm run build
 ## 🤝 Contributing
 
 Project built as a **pre-hire intern assignment** showcasing:
+
 - React functional components & hooks
 - localStorage integration
 - Clean, maintainable code
@@ -150,6 +139,3 @@ Built for educational/demo purposes only.
 Made with ❤️ using React.js.
 
 ---
-
-> ✅ **Replace** `<repository-url>` & live URL placeholders before final submission.  
-> 📸 **Add real screenshots** after deployment.
